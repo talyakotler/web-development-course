@@ -1,0 +1,2537 @@
+﻿@import url(//fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+
+/*-------------------------*/
+/*
+    COLORS
+    #20252b - black
+    #dfae2b - yellow
+    #237da0 - light blue
+    #F3F8FC - light light blue
+    #0F2233 - dark blue (footer)
+    #f2f8fc - light grey background
+    #f4f4f4 - light grey nav hover
+*/
+/*-------------------------*/
+
+
+
+/*--------------------------------------------------------------------------------------------------*/
+/* GLOBAL */
+/*--------------------------------------------------------------------------------------------------*/
+
+body {
+    direction: rtl;
+    font-family: 'Open Sans Hebrew';
+    color: #20252b;
+}
+
+#container {
+    margin: 0 auto;
+    width: 1366px;
+}
+
+#out-of-container {
+    position: absolute;
+    width: 100%;
+    min-width: 1366px;
+}
+
+ul, ol {
+    list-style: none;
+
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 30pt;
+}
+
+    h2.h-underline:after {
+        content: '';
+        width: 100px;
+        height: 4px;
+        display: block;
+        background-color: #237da0;
+        text-align: center;
+        margin: 15px auto 0 auto;
+    }
+
+li i {
+    color: #dfae2b;
+    font-size: 15pt;
+    margin-left: 3px;
+}
+
+/*load fixed scroll animation*/
+html.sr .load-hidden {
+    visibility: hidden;
+}
+
+.notActive {
+    cursor: not-allowed;
+}
+
+/*--------------------------------------------------------------*/
+/* back to top btn */
+/*--------------------------------------------------------------*/
+
+#top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 14pt;
+    padding-top: 12px;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    color: #0f2233;
+    -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
+    cursor: pointer;
+    display: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+    #top-btn:hover {
+        transform: translateY(-8px);
+    }
+
+/*--------------------------------------------------------------*/
+/* skip-btn */
+/*--------------------------------------------------------------*/
+
+.accessibility {
+    position: absolute;
+    right: -99999px;
+    height: 10px;
+    width: 10px;
+}
+
+#skip {
+    position: absolute;
+    top: 65px;
+    width: 16%;
+    margin: 0 auto;
+    text-align: center;
+    list-style: outside none;
+}
+
+    #skip li {
+        list-style-type: none;
+    }
+
+    #skip a {
+        position: absolute;
+        right: -99999px;
+        top: 30px;
+    }
+
+        #skip a:focus, #skip a:active {
+            position: relative;
+            right: 0;
+            z-index: 9999;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 15px 50px;
+            font-size: 16pt;
+            text-align: center;
+            text-decoration: none;
+            color: #0f2233;
+            background-color: rgba(255,255,255,0.9);
+            -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
+            box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
+            outline: 3px solid #dfae2b;
+        }
+
+    #skip i {
+        font-size: 11pt;
+        padding-right: 4px;
+        color: #0f2233;
+    }
+
+/*--------------------------------------------------------------*/
+/* LOGO */
+/*--------------------------------------------------------------*/
+.logo {
+    display: inline-block;
+    width: 300px;
+    height: 58px;
+    color: #20252b;
+    text-decoration: none;
+}
+
+    .logo:hover {
+        color: #20252b;
+        text-decoration: none;
+    }
+
+    .logo h1 {
+        font-size: 22pt;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 4px;
+    }
+
+.insidePageLogo p:nth-child(2) {
+    font-size: 22pt;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.logo-img {
+    background-image: url(../images/logo.png);
+    background-size: cover;
+    width: 58px;
+    height: 58px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.logo p:nth-child(3) {
+    font-size: 9pt;
+    display: inline-block;
+    position: relative;
+    top: -32px;
+    right: 65px;
+}
+
+
+/*--------------------------------------------------------------------*/
+/* NAVIGATION */
+/*--------------------------------------------------------------------*/
+
+header {
+    padding: 0 70px;
+    height: 68px;
+}
+
+    header nav {
+        display: inline-block;
+        position: relative;
+        top: -48px;
+        margin-right: 155px;
+    }
+
+.navbar.fixed-top.menu-fixed {
+    height: 68px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    z-index: 100;
+}
+
+header nav > ul > li {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+}
+
+header nav ul li a {
+    display: block;
+    color: #20252b;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+    header nav ul li a:hover {
+        color: #20252b;
+        text-decoration: none;
+    }
+
+.menu-item-link:after {
+    content: '';
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.menu-item-link:hover::after {
+    content: '';
+    opacity: 1;
+    display: block;
+    width: 40px;
+    height: 2.5px;
+    background-color: #f6ca37;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header nav ul li ul {
+    width: 180px;
+    display: none;
+    position: absolute;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    z-index: 11;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+header nav ul li:hover ul {
+    display: block;
+}
+
+
+ul.sub-menu li a {
+    background-color: #fff;
+    text-align: right;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+    ul.sub-menu li a:hover {
+        background-color: #f2f8fc;
+        text-decoration: underline;
+        color: #237da0;
+    }
+
+
+header nav ul li ul.sub-menu.oceania {
+    width: 200px;
+}
+
+header div.clickable {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.current-nav::after {
+    content: '';
+    opacity: 1;
+    display: block;
+    width: 40px;
+    height: 2.5px;
+    background-color: #f6ca37;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.current-nav.asia::after {
+    content: "";
+    width: 30px;
+}
+
+/* nav icons */
+.ico {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+    background-size: 100%;
+}
+
+    /* europe */
+    .ico.ita {
+        background-image: url(../images/italy.png);
+    }
+
+    .ico.uk {
+        background-image: url(../images/united-kingdom.png);
+    }
+
+    .ico.ger {
+        background-image: url(../images/germany.png);
+    }
+
+    .ico.nld {
+        background-image: url(../images/netherlands.png);
+    }
+
+    .ico.gre {
+        background-image: url(../images/greece.png);
+    }
+
+    .ico.esp {
+        background-image: url(../images/spain.png);
+    }
+
+    .ico.fra {
+        background-image: url(../images/france.png);
+    }
+
+    .ico.swd {
+        background-image: url(../images/switzerland.png);
+    }
+
+
+    /* america */
+    .ico.arg {
+        background-image: url(../images/argentina.png);
+    }
+
+    .ico.usa {
+        background-image: url(../images/united-states-of-america.png);
+    }
+
+    .ico.bra {
+        background-image: url(../images/brazil.png);
+    }
+
+    .ico.mex {
+        background-image: url(../images/mexico.png);
+    }
+
+    .ico.bia {
+        background-image: url(../images/colombia.png);
+    }
+
+    .ico.can {
+        background-image: url(../images/canada.png);
+    }
+
+
+    /* asia */
+    .ico.ind {
+        background-image: url(../images/india.png);
+    }
+
+    .ico.hkg {
+        background-image: url(../images/hong-kong.png);
+    }
+
+    .ico.jap {
+        background-image: url(../images/japan.png);
+    }
+
+    .ico.chi {
+        background-image: url(../images/china.png);
+    }
+
+    .ico.sin {
+        background-image: url(../images/singapore.png);
+    }
+
+    .ico.kor {
+        background-image: url(../images/south-korea.png);
+    }
+
+    .ico.rus {
+        background-image: url(../images/russia.png);
+    }
+
+    .ico.tha {
+        background-image: url(../images/thailand.png);
+    }
+
+
+    /* africa */
+    .ico.eth {
+        background-image: url(../images/ethiopia.png);
+    }
+
+    .ico.saf {
+        background-image: url(../images/south-africa.png);
+    }
+
+    .ico.egy {
+        background-image: url(../images/egypt.png);
+    }
+
+    .ico.mar {
+        background-image: url(../images/morocco.png);
+    }
+
+    .ico.nig {
+        background-image: url(../images/nigeria.png);
+    }
+
+    .ico.ken {
+        background-image: url(../images/kenya.png);
+    }
+
+    /* oceania */
+    .ico.aus {
+        background-image: url(../images/australia.png);
+    }
+
+    .ico.nzl {
+        background-image: url(../images/new-zealand.png);
+    }
+
+    .ico.png {
+        background-image: url(../images/papua-new-guinea.png);
+    }
+
+    .ico.fji {
+        background-image: url(../images/fiji.png);
+    }
+
+
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
+/* HOMEPAGE */
+/*-------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------*/
+/* OUT OF CONTAINER - HOMEPAGE */
+/*--------------------------------------------------------------*/
+
+.nav-bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 68px;
+    display: inline-block;
+    z-index: 99;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.countries-bg,
+.quickfacts-bg,
+.footer-bg {
+    z-index: -1;
+}
+
+.carousel-images-bg {
+    margin-top: 68px;
+    height: 654px;
+}
+
+.countries-bg {
+    height: 800px;
+    background-color: #F3F8FC;
+}
+
+.quickfacts-bg {
+    height: 605px;
+    background-color: #fff;
+}
+
+.footer-bg {
+    height: 507px;
+    background-color: #0F2233;
+}
+
+.footer-line {
+    background-color: #C0D7E7;
+    height: 1px;
+    width: 1366px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 145px;
+}
+
+/*-----------------------------------------*/
+/* INTRODUCTION - BANNER */
+/*-----------------------------------------*/
+
+
+.introduction-carousel-item {
+    height: 654px;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+    .introduction-carousel-item.slide-one {
+        background-image: url(../images/big-banner-img-1.jpg);
+    }
+
+    .introduction-carousel-item.slide-two {
+        background-image: url(../images/big-banner-img-2.jpg);
+    }
+
+    .introduction-carousel-item.slide-three {
+        background-image: url(../images/big-banner-img-3.jpg);
+    }
+
+.carousel-images-bg i {
+    font-size: 30pt;
+    color: white;
+    position: absolute;
+    margin-bottom: 15px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.introduction {
+    position: absolute;
+    width: 960px;
+    left: 0;
+    right: 0;
+    margin: 60px auto 0 auto;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+    .introduction h2 {
+        font-size: 55pt;
+    }
+
+    .introduction p {
+        font-size: 27pt;
+        margin: 20px 0 70px 0;
+    }
+
+.btns {
+    background-color: #dfae2b;
+    border: none;
+    color: white;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.start-btn {
+    width: 100px;
+    height: 50px;
+    font-size: 19pt;
+    padding: 10px 30px;
+}
+
+.btns:hover {
+    background-color: #c49702;
+    color: white;
+    text-decoration: none;
+}
+
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.carousel-indicators {
+    bottom: 80px;
+}
+
+    .carousel-indicators .active {
+        background-color: #dfae2b;
+    }
+
+/*---------------------------------------------*/
+/* CHOSE COUNTRY SECTION */
+/*---------------------------------------------*/
+
+.countries {
+    margin-top: 700px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+#anchor-choose-country { /* setting anchor position */
+    position: absolute;
+    top: -120px;
+}
+
+.countries ul {
+    margin: 0 auto;
+}
+
+.flag-wrap {
+    width: 300px;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+.countries p {
+    text-align: center;
+    font-size: 20pt;
+    margin: 20px auto 60px auto;
+}
+
+    .countries p:nth-child(3) {
+        font-size: 14pt;
+        margin: 30px auto 20px auto;
+    }
+
+.countries ul li a .flag {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 190px;
+    height: 117px;
+    display: block;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    margin: 0 auto 10px auto;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.countries ul {
+    margin-bottom: 70px;
+}
+
+    .countries ul li {
+        text-align: center;
+    }
+
+        .countries ul li a {
+            color: #20252b;
+            font-size: 18pt;
+        }
+
+            .countries ul li a:hover {
+                text-decoration: none;
+            }
+
+                .countries ul li a:hover .flag {
+                    -webkit-box-shadow: 0 0 8px 1px rgba(0,0,0,0.5);
+                    box-shadow: 0 0 8px 1px rgba(0,0,0,0.5);
+                }
+
+.flag.usa {
+    background-image: url(../images/sq-usa.png);
+}
+
+.flag.uk {
+    background-image: url(../images/sq-uk.png);
+}
+
+.flag.ger {
+    background-image: url(../images/sq-germany.png);
+}
+
+.flag.jap {
+    background-image: url(../images/sq-japan.png);
+}
+
+.flag.bra {
+    background-image: url(../images/sq-brazil.png);
+}
+
+.flag.saf {
+    background-image: url(../images/sq-southafrica.png);
+}
+
+.flag.ind {
+    background-image: url(../images/sq-india.png);
+}
+
+.flag.chi {
+    background-image: url(../images/sq-china.png);
+}
+
+/*------------------------------------------------*/
+/* QUICK FACTS CAROUSEL */
+/*------------------------------------------------*/
+
+.quick-facts {
+    width: 1200px;
+    height: 450px;
+    margin: 40px auto 0 auto;
+    overflow-y: hidden;
+    -webkit-box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+}
+
+.quick-facts-item {
+    background-size: 57%;
+    background-attachment: scroll;
+    background-position-x: left;
+    background-position-y: top;
+}
+
+.quick-facts .first-slide {
+    background-image: url(../images/chinaFact.jpeg);
+}
+
+.quick-facts .second-slide {
+    background-image: url(../images/usaFact.jpeg);
+    background-position-x: -80px;
+}
+
+.quick-facts .third-slide {
+    background-image: url(../images/germanyfact.jpeg);
+    background-position-x: -50px;
+}
+
+.quick-facts .fourth-slide {
+    background-image: url(../images/indiafact.jpeg);
+    background-position-x: -50px;
+}
+
+
+.quick-facts .carousel-indicators li {
+    cursor: pointer;
+    background-color: #D1DAE1;
+    top: 60px;
+    left: 290px;
+}
+
+.quick-facts .carousel-indicators .active {
+    background-color: #dfae2b;
+}
+
+.slide-skew::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: -440px;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transform: skew(-15deg, 0deg);
+}
+
+.slide-content {
+    width: 573px;
+    height: 450px;
+    text-align: center;
+    padding-right: 50px;
+}
+
+    .slide-content h2 {
+        font-size: 28pt;
+        display: inline-block;
+        margin-right: 30px;
+        position: relative;
+        bottom: 10px;
+    }
+
+    .slide-content p {
+        font-size: 19pt;
+        text-align: center;
+        margin: 20px auto 30px auto;
+    }
+
+.fact-flag {
+    background-size: 100%;
+    width: 100px;
+    height: 62px;
+    display: inline-block;
+    margin-top: 50px;
+    -webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+}
+
+.quick-facts-btn {
+    font-size: 14pt;
+    width: 60px;
+    padding: 10px 20px;
+    margin-top: 100px;
+}
+
+.quick-facts-arrow {
+    font-size: 16pt;
+}
+
+    .quick-facts-arrow.left {
+        margin-right: 50px;
+        color: #fff;
+    }
+
+    .quick-facts-arrow.right {
+        margin-left: 50px;
+        color: #595959;
+    }
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
+/* INSIDE PAGES */
+/*-------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------*/
+/* OUT OF CONTAINER INSIDE PAGES */
+/*------------------------------------------------*/
+.banner-photo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 68px;
+    height: 500px;
+    z-index: -1;
+}
+
+    .banner-photo.usa {
+        background-image: url(../images/banner-usa.jpeg);
+    }
+
+    .banner-photo.ger {
+        background-image: url(../images/banner-ger.jpg);
+    }
+
+    .banner-photo.ind {
+        background-image: url(../images/banner-ind.jpg);
+    }
+
+    .banner-photo.chi {
+        background-image: url(../images/banner-chi.jpg);
+    }
+
+.greetings-bg {
+    height: 750px;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.communication-bg {
+    height: 615px;
+    background-color: #F3F8FC;
+    z-index: -1;
+}
+
+.dresscode-meetings-bg {
+    background-color: #fff;
+    z-index: -1;
+}
+
+    .dresscode-meetings-bg.usa {
+        height: 3075px;
+    }
+
+    .dresscode-meetings-bg.ger {
+        height: 2945px;
+    }
+
+    .dresscode-meetings-bg.chi {
+        height: 2910px;
+    }
+
+    .dresscode-meetings-bg.ind {
+        height: 2937px;
+    }
+
+.negotiation-bg {
+    height: 615px;
+    background-color: #F3F8FC;
+    z-index: -1;
+}
+
+.gifts-cards-more-bg {
+    background-color: #fff;
+    z-index: -1;
+}
+
+    .gifts-cards-more-bg.ger {
+        height: 1701px;
+    }
+
+    .gifts-cards-more-bg.chi {
+        height: 1706px;
+    }
+
+    .gifts-cards-more-bg.ind {
+        height: 1729px;
+    }
+
+    .gifts-cards-more-bg.usa {
+        height: 1713px;
+    }
+
+/*------------------------------------------------*/
+/* BREAD CRUMBS NAV */
+/*------------------------------------------------*/
+.bread-crumbs-nav {
+    margin-right: 45px;
+    position: relative;
+}
+
+    .bread-crumbs-nav li {
+        display: inline-block;
+        font-size: 14pt;
+        margin: 0 5px;
+        color: #fff;
+    }
+
+        .bread-crumbs-nav li:after {
+            content: " > ";
+        }
+
+        .bread-crumbs-nav li:last-child::after {
+            content: "";
+        }
+
+        .bread-crumbs-nav li a {
+            color: #fff;
+            text-decoration: underline;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+            .bread-crumbs-nav li a:hover {
+                opacity: 0.8;
+                text-decoration: none;
+            }
+
+    .bread-crumbs-nav i {
+        color: #fff;
+        padding-right: 5px;
+        font-size: 14pt;
+    }
+
+
+/*------------------------------------------------*/
+/* COUNTRY BANNER */
+/*------------------------------------------------*/
+.countryBanner {
+    position: relative;
+    text-align: center;
+}
+
+    .countryBanner h1 {
+        font-size: 42pt;
+        color: white;
+        margin-top: -20px;
+    }
+
+    .countryBanner p {
+        color: #d1dede;
+        font-size: 19pt;
+    }
+
+        .countryBanner ul li {
+            display: inline-block;
+            width: 170px;
+        }
+
+            .countryBanner ul li a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 16pt;
+            }
+
+.ico-large {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.countryBanner ul li a .ico-large {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.countryBanner ul li a:hover .ico-large {
+    transform: translateY(-8px);
+}
+
+.ico-large.greetings {
+    background-image: url(../images/greetings-icon-01.png);
+}
+
+.ico-large.communication {
+    background-image: url(../images/comuunicationstyle-icon-01.png);
+}
+
+.ico-large.dresscode {
+    background-image: url(../images/dress-icon-01.png)
+}
+
+.ico-large.negotiation {
+    background-image: url(../images/negotiation-icon-01.png);
+}
+
+.ico-large.gifts {
+    background-image: url(../images/gift-icon-01.png);
+}
+
+.ico-large.cards {
+    background-image: url(../images/businesscards-icon-01.png);
+}
+
+.ico-large.meetings {
+    background-image: url(../images/businessmeetings-icon-01.png);
+}
+
+
+/* anchors */
+
+#anchor-greetings-section,
+#anchor-communication-section,
+#anchor-dresscode-section,
+#anchor-besiness-meeting,
+#anchor-negotiation,
+#anchor-gifts,
+#anchor-business-cards {
+    position: absolute;
+}
+
+#anchor-greetings-section,
+#anchor-besiness-meeting,
+#anchor-negotiation,
+#anchor-gifts {
+    top: -150px;
+}
+
+#anchor-business-cards {
+    top: -160px;
+}
+
+#anchor-communication-section,
+#anchor-dresscode-section {
+    top: -140px;
+}
+
+/*--------------------------------------------------*/
+/* COUNTRY BIO */
+/*--------------------------------------------------*/
+
+.country-bio {
+    background-color: #fff;
+    width: 1100px;
+    height: 200px;
+    -webkit-box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    margin: 60px auto 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.fact {
+    display: inline-block;
+    font-size: 14pt;
+    text-align: center;
+    vertical-align: middle;
+    padding: 60px 0;
+    width: 212px;
+}
+
+img.flag-img {
+    width: 120px;
+    height: 74px;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+}
+
+.fact-line {
+    display: inline-block;
+    width: 1px;
+    height: 120px;
+    background-color: #d1dae1;
+    vertical-align: middle;
+}
+
+.fact p {
+    margin: 0;
+}
+
+.fact h2 {
+    font-size: 14pt;
+}
+
+.country-bio .flag {
+    background-size: 100%;
+    width: 120px;
+    height: 74px;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+
+/*--------------------------------------------------------*/
+/* GREETINGS SECTION */
+/*--------------------------------------------------------*/
+.greetings-section {
+    width: 1200px;
+    height: 460px;
+    margin: 100px auto 0 auto;
+    position: relative;
+}
+
+.carousel-gallery {
+    width: 690px;
+    height: 460px;
+    display: inline-block;
+}
+
+.carousel-gallery-item {
+    background: no-repeat center center scroll;
+    background-size: cover;
+    width: 690px;
+    height: 460px;
+}
+
+.carousel-gallery .carousel-indicators {
+    bottom: 15px;
+}
+
+    .carousel-gallery .carousel-indicators li {
+        cursor: pointer;
+        background-color: #d1dae1;
+        -webkit-box-shadow: 0 0 5px 3px rgba(0,0,0,0.4);
+        box-shadow: 0 0 5px 3px rgba(0,0,0,0.4);
+    }
+
+    .carousel-gallery .carousel-indicators .active {
+        background-color: #dfae2b;
+    }
+
+
+/*--------------------- gallery photos ----------------------*
+
+/*--------- greetings section-usa ----------*/
+.carousel-gallery.greetings-usa .carousel-gallery-item.slide-one {
+    background-image: url(../images/greetings-usa-1.jpg);
+}
+
+.carousel-gallery.greetings-usa .carousel-gallery-item.slide-two {
+    background-image: url(../images/greetings-usa-2.jpg);
+}
+
+.carousel-gallery.greetings-usa .carousel-gallery-item.slide-three {
+    background-image: url(../images/greetings-usa-3.jpeg);
+}
+
+
+/*--------- greetings section-germany ----------*/
+.carousel-gallery.greetings-ger .carousel-item.slide-one {
+    background-image: url(../images/greetings-ger-1.jpeg);
+}
+
+.carousel-gallery.greetings-ger .carousel-item.slide-two {
+    background-image: url(../images/greetings-ger-2.jpeg);
+}
+
+.carousel-gallery.greetings-ger .carousel-item.slide-three {
+    background-image: url(../images/greetings-ger-3.jpeg);
+}
+
+
+/*--------- greetings section-china ----------*/
+.carousel-gallery.greetings-chi .carousel-item.slide-one {
+    background-image: url(../images/greetings-chi-1.jpeg);
+}
+
+.carousel-gallery.greetings-chi .carousel-item.slide-two {
+    background-image: url(../images/greetings-chi-2.jpeg);
+}
+
+.carousel-gallery.greetings-chi .carousel-item.slide-three {
+    background-image: url(../images/greetings-chi-3.jpeg);
+}
+
+/*--------- greetings section-india ----------*/
+.carousel-gallery.greetings-ind .carousel-item.slide-one {
+    background-image: url(../images/greetings-ind-1.jpeg);
+}
+
+.carousel-gallery.greetings-ind .carousel-item.slide-two {
+    background-image: url(../images/greetings-ind-2.jpeg);
+}
+
+.carousel-gallery.greetings-ind .carousel-item.slide-three {
+    background-image: url(../images/greetings-ind-3.jpeg);
+}
+
+
+/*--------------------- next-to-carusel text-box ----------------------*/
+.next-to-carousel {
+    width: 600px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+    padding: 30px 20px;
+    position: relative;
+    text-align: center;
+    z-index: 10;
+}
+
+    .next-to-carousel.greetings {
+        bottom: 420px;
+    }
+
+    .next-to-carousel.left {
+        right: 600px;
+    }
+
+    .next-to-carousel h2 {
+        margin-bottom: 30px;
+    }
+
+    .next-to-carousel ul li {
+        margin: 10px 0px;
+    }
+
+.greetings ul, .business-cards ul {
+    text-align: right;
+    padding-right: 30px;
+}
+
+.icon-list, .icon-list li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.arrow-listyle {
+    left: 0;
+    right: -25px;
+}
+
+.next-to-carousel.greetings.ger, .next-to-carousel.greetings.chi {
+    height: 350px;
+}
+
+
+/*--------------------------------------------------------------*/
+/* COMUUNICATION STYLE SECTION */
+/*--------------------------------------------------------------*/
+
+.communication-bg {
+    top: 1305px;
+}
+
+.communication-section {
+    width: 1200px;
+    height: 500px;
+    margin: 190px auto 0 auto;
+    position: relative;
+}
+
+    .communication-section.ger {
+        margin-top: 220px;
+    }
+
+.carousel-gallery.left {
+    position: relative;
+    right: 510px;
+}
+
+.next-to-carousel.communication p, .next-to-carousel.negotiation p {
+    text-align: right;
+}
+
+.next-to-carousel.communication {
+    padding: 30px 35px;
+}
+
+.carousel-gallery.communication-ind, .carousel-gallery.communication-usa {
+    top: -415px;
+}
+
+.carousel-gallery.communication-ger {
+    top: -360px;
+}
+
+.carousel-gallery.communication-chi {
+    top: -430px;
+}
+
+
+/*--------- communication section-usa ----------*/
+.carousel-gallery.communication-usa .carousel-gallery-item.slide-one {
+    background-image: url(../images/communication-usa-1.jpeg);
+}
+
+.carousel-gallery.communication-usa .carousel-gallery-item.slide-two {
+    background-image: url(../images/communication-usa-2.jpeg);
+}
+
+.carousel-gallery.communication-usa .carousel-gallery-item.slide-three {
+    background-image: url(../images/communication-usa-3.jpeg);
+}
+
+
+/*--------- communication section-germany ----------*/
+.carousel-gallery.communication-ger .carousel-item.slide-one {
+    background-image: url(../images/communication-ger-1.jpeg);
+}
+
+.carousel-gallery.communication-ger .carousel-item.slide-two {
+    background-image: url(../images/communication-ger-2.jpeg);
+}
+
+.carousel-gallery.communication-ger .carousel-item.slide-three {
+    background-image: url(../images/communication-ger-3.jpeg);
+}
+
+
+/*--------- communication section-china ----------*/
+.carousel-gallery.communication-chi .carousel-item.slide-one {
+    background-image: url(../images/communication-chi-1.jpeg);
+}
+
+.carousel-gallery.communication-chi .carousel-item.slide-two {
+    background-image: url(../images/communication-chi-2.jpeg);
+}
+
+.carousel-gallery.communication-chi .carousel-item.slide-three {
+    background-image: url(../images/communication-chi-3.jpeg);
+}
+
+/*--------- communication section-india ----------*/
+.carousel-gallery.communication-ind .carousel-item.slide-one {
+    background-image: url(../images/communication-ind-1.jpeg);
+}
+
+.carousel-gallery.communication-ind .carousel-item.slide-two {
+    background-image: url(../images/communication-ind-2.jpeg);
+}
+
+.carousel-gallery.communication-ind .carousel-item.slide-three {
+    background-image: url(../images/communication-ind-3.jpeg);
+}
+
+
+/*--------------------------------------------------------------*/
+/* DRESS CODE SECTION */
+/*--------------------------------------------------------------*/
+/*--------- dresscode section-usa ----------*/
+.dresscode-section {
+    margin-top: 75px;
+    position: relative;
+}
+
+    .dresscode-section h2,
+    .dresscode-section h3 {
+        text-align: center;
+    }
+
+    .dresscode-section h3 {
+        margin: 55px auto 15px auto;
+    }
+
+    .dresscode-section ul {
+        margin: 0 auto;
+    }
+
+    .dresscode-section.usa ul {
+        width: 545px;
+    }
+
+    .dresscode-section.chi ul, .dresscode-section.ind ul, .dresscode-section.ger ul {
+        width: 400px;
+    }
+
+    .dresscode-section ul li {
+        margin: 10px 0px;
+    }
+
+.img-wrap {
+    height: 525px;
+    width: 400px;
+    background-color: #f2f8fc;
+    display: inline-block;
+    margin: 35px 25px;
+    -webkit-box-shadow: 0 0 32px rgba(0,0,0,.1);
+    box-shadow: 0 0 32px rgba(0,0,0,.1);
+}
+
+    .img-wrap img {
+        height: 425px;
+        width: 400px;
+    }
+
+    .img-wrap .dresscode-decri {
+        width: 400px;
+        height: 100px;
+        background-color: #0f2233;
+        color: #fff;
+        font-size: 19pt;
+        text-align: center;
+    }
+
+        .img-wrap .dresscode-decri p {
+            padding-top: 30px;
+            margin: 0;
+        }
+
+    .img-wrap .dress-icon {
+        width: 75px;
+        height: 75px;
+        background-size: 100%;
+        position: relative;
+        left: 18px;
+        bottom: 25px;
+    }
+
+        .img-wrap .dress-icon.best {
+            background-image: url(../images/dresscode-best-icon.png);
+        }
+
+        .img-wrap .dress-icon.ok {
+            background-image: url(../images/dresscode-ok-icon.png);
+        }
+
+        .img-wrap .dress-icon.bad {
+            background-image: url(../images/dresscode-bad-icon.png);
+        }
+
+
+/*--------------------------------------------------------------*/
+/* BUSINESS MEETINGS SECTION */
+/*--------------------------------------------------------------*/
+
+.besiness-meeting-section {
+    margin-top: 100px;
+    text-align: center;
+    height: 1100px;
+    position: relative;
+}
+
+    .besiness-meeting-section.ind {
+        height: 1020px;
+    }
+
+.rule {
+    width: 450px;
+    height: 150px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0px 12px 0px rgba(0,0,0,0.1);
+    box-shadow: 0 0px 12px 0px rgba(0,0,0,0.1);
+}
+
+.rules-even {
+    float: left;
+    margin: 40px 0px 40px 120px;
+}
+
+.rules-not-even {
+    float: right;
+    margin: 40px 80px 40px 0px;
+}
+
+.rules-even.first {
+    margin-top: 150px;
+}
+
+.rule {
+    text-align: right;
+}
+
+    .rule h3 {
+        font-size: 12pt;
+        font-weight: 600;
+    }
+
+    .rule p:last-child, .rule h3 {
+        display: inline;
+        margin: 0;
+    }
+
+.rule-num {
+    color: #237da0;
+    font-size: 28pt;
+}
+
+.rules-not-even .rule-num {
+    float: left;
+    padding-left: 15px;
+}
+
+.rules-even .rule-num {
+    padding-right: 15px;
+}
+
+.role-content {
+    display: inline-block;
+    width: 360px;
+}
+
+.rules-not-even .role-content {
+    margin: 20px 20px 20px 0;
+}
+
+.rules-even .role-content {
+    position: relative;
+    top: -50px;
+    right: 60px;
+}
+
+.rules-line {
+    width: 2px;
+    left: -50%;
+    background-color: #f1f4f8;
+    display: inline-block;
+    margin-top: 110px;
+}
+
+.besiness-meeting-section.usa .rules-line {
+    height: 800px;
+}
+
+.besiness-meeting-section.chi .rules-line, .besiness-meeting-section.ger .rules-line, .besiness-meeting-section.ind .rules-line {
+    height: 700px;
+}
+
+.rule-circle {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #dfae2b;
+    height: 10px;
+    width: 10px;
+    position: relative;
+}
+
+.rules-not-even .rule-circle {
+    top: 50%;
+    right: 558px;
+}
+
+.rules-even .rule-circle {
+    top: 50%;
+    left: 118px;
+}
+
+/*--------- business-meetings-china ----------*/
+.besiness-meeting-section.chi .rule-four, .besiness-meeting-section.chi .rule-six, .besiness-meeting-section.chi .rule-seven {
+    height: 180px;
+}
+
+    .besiness-meeting-section.chi .rule-six .role-content {
+        top: -60px;
+    }
+
+/*--------- business-meetings-germany ----------*/
+.besiness-meeting-section.ger .rule-four {
+    height: 180px;
+}
+
+    .besiness-meeting-section.ger .rule-four .role-content {
+        top: -60px;
+    }
+
+
+/*--------------------------------------------------------------*/
+/* NEGOTITAION SECTION */
+/*--------------------------------------------------------------*/
+.negotiation-section {
+    width: 1200px;
+    height: 500px;
+    margin: 120px auto 0 auto;
+    position: relative;
+}
+
+.negotiation-bg.usa {
+    top: 5030px;
+}
+
+.negotiation-bg.chi, .negotiation-bg.ind, .negotiation-bg.ger {
+    top: 4855px;
+}
+
+.next-to-carousel.negotiation.usa {
+    top: -445px;
+}
+
+.next-to-carousel.negotiation.chi {
+    top: -410px;
+}
+
+.next-to-carousel.negotiation.ind {
+    top: -470px;
+}
+
+.next-to-carousel.negotiation.ger {
+    top: -475px;
+}
+
+/*--------- negotiation section-usa ----------*/
+.carousel-gallery.negotiation-usa .carousel-gallery-item.slide-one {
+    background-image: url(../images/negotiation-usa-1.jpeg);
+}
+
+.carousel-gallery.negotiation-usa .carousel-gallery-item.slide-two {
+    background-image: url(../images/negotiation-usa-2.jpeg);
+}
+
+.carousel-gallery.negotiation-usa .carousel-gallery-item.slide-three {
+    background-image: url(../images/negotiation-usa-3.jpeg);
+}
+
+
+/*--------- negotiation section-germany ----------*/
+.carousel-gallery.negotiation-ger .carousel-item.slide-one {
+    background-image: url(../images/negotiation-ger-2.jpeg);
+}
+
+.carousel-gallery.negotiation-ger .carousel-item.slide-two {
+    background-image: url(../images/negotiation-ger-1.jpeg);
+}
+
+.carousel-gallery.negotiation-ger .carousel-item.slide-three {
+    background-image: url(../images/negotiation-ger-3.jpeg);
+}
+
+
+/*--------- negotiation section-china ----------*/
+.carousel-gallery.negotiation-chi .carousel-item.slide-one {
+    background-image: url(../images/negotiation-chi-1.jpeg);
+}
+
+.carousel-gallery.negotiation-chi .carousel-item.slide-two {
+    background-image: url(../images/negotiation-chi-2.jpeg);
+}
+
+.carousel-gallery.negotiation-chi .carousel-item.slide-three {
+    background-image: url(../images/negotiation-chi-3.jpeg);
+}
+
+/*--------- negotiation section-india ----------*/
+.carousel-gallery.negotiation-ind .carousel-item.slide-one {
+    background-image: url(../images/negotiation-ind-1.jpeg);
+}
+
+.carousel-gallery.negotiation-ind .carousel-item.slide-two {
+    background-image: url(../images/negotiation-ind-2.jpeg);
+}
+
+.carousel-gallery.negotiation-ind .carousel-item.slide-three {
+    background-image: url(../images/negotiation-ind-3.jpeg);
+}
+
+
+/*--------------------------------------------------------------*/
+/* GIFTS SECTION */
+/*--------------------------------------------------------------*/
+
+.gifts-section {
+    height: 530px;
+    margin-top: 120px;
+    text-align: center;
+    position: relative;
+}
+
+.ico-mark {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    left: 40px;
+    top: 25px;
+}
+
+.gift-rules {
+    width: 500px;
+    display: inline-block;
+    padding: 20px;
+    vertical-align: top;
+}
+
+    .gift-rules.do {
+        float: right;
+        margin-right: 100px;
+    }
+
+    .gift-rules.dont-do {
+        float: left;
+        margin-left: 100px;
+    }
+
+    .gift-rules li {
+        text-align: right;
+    }
+
+    .gift-rules p {
+        margin-bottom: 10px;
+    }
+
+
+/*--------------------------------------------------------------*/
+/* BUSINESS-CARDS SECTION */
+/*--------------------------------------------------------------*/
+.business-cards-section {
+    width: 1200px;
+    height: 520px;
+    margin: 70px auto 0 auto;
+    position: relative;
+}
+
+    .business-cards-section.ind {
+        margin-top: 100px;
+    }
+
+.carousel-gallery.business-cards-usa {
+    top: -427px;
+}
+
+.carousel-gallery.business-cards-chi {
+    top: -408px;
+}
+
+.carousel-gallery.business-cards-ind {
+    top: -395px;
+}
+
+.carousel-gallery.business-cards-ger {
+    top: -388px;
+}
+
+.carousel-gallery.business-cards-chi .carousel-gallery-item p {
+    float: left;
+    margin-top: 435px;
+    margin-left: 10px;
+    font-size: 10pt;
+    color: #fff;
+}
+
+.carousel-gallery.business-cards-chi .carousel-gallery-item.slide-two p {
+    color: #20252b;
+}
+
+.carousel-gallery.business-cards-chi .carousel-gallery-item p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.carousel-gallery.business-cards-chi .carousel-gallery-item.slide-two p a {
+    color: #20252b;
+}
+
+.carousel-gallery.business-cards-chi .carousel-gallery-item p a:hover {
+    text-decoration: none;
+}
+
+
+/*--------- business cards -usa ----------*/
+.carousel-gallery.business-cards-usa .carousel-gallery-item.slide-one {
+    background-image: url(../images/business-cards-usa-1.jpeg);
+}
+
+.carousel-gallery.business-cards-usa .carousel-gallery-item.slide-two {
+    background-image: url(../images/business-cards-usa-2.jpeg);
+}
+
+
+/*--------- business cards-germany ----------*/
+.carousel-gallery.business-cards-ger .carousel-item.slide-one {
+    background-image: url(../images/business-cards-ger-1.jpeg);
+}
+
+.carousel-gallery.business-cards-ger .carousel-item.slide-two {
+    background-image: url(../images/business-cards-ger-2.jpeg);
+}
+
+
+
+/*--------- business cards-china ----------*/
+.carousel-gallery.business-cards-chi .carousel-item.slide-one {
+    background-image: url(../images/business-cards-chi-1.jpeg);
+}
+
+.carousel-gallery.business-cards-chi .carousel-item.slide-two {
+    background-image: url(../images/business-cards-chi-2.jpeg);
+}
+
+
+/*--------- business cards-india ----------*/
+.carousel-gallery.business-cards-ind .carousel-item.slide-one {
+    background-image: url(../images/business-cards-ind-1.jpeg);
+}
+
+.carousel-gallery.business-cards-ind .carousel-item.slide-two {
+    background-image: url(../images/business-cards-ind-2.jpeg);
+}
+
+/*--------------------------------------------------------------*/
+/* READ MORE ABOUT - ASIDE */
+/*--------------------------------------------------------------*/
+hr {
+    position: relative;
+}
+
+aside {
+    height: 380px;
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+}
+
+    aside ul {
+        margin-top: 50px;
+    }
+
+        aside ul li {
+            margin: 0 15px;
+        }
+
+    aside a {
+        color: #20252b;
+        font-size: 18pt;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+        aside a:hover {
+            text-decoration: none;
+            color: #20252b;
+        }
+
+.read-more .flag-photo {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 220px;
+    height: 220px;
+    display: block;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    margin: 0 auto 10px auto;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.read-more ul li a:hover .flag-photo {
+    -webkit-box-shadow: 0 0 8px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 0 8px 1px rgba(0,0,0,0.5);
+}
+
+.flag-photo.ger {
+    background-image: url(../images/flag-germany.jpeg)
+}
+
+.flag-photo.ind {
+    background-image: url(../images/flag-india.jpeg)
+}
+
+.flag-photo.chi {
+    background-image: url(../images/flag-china.jpg)
+}
+
+.flag-photo.usa {
+    background-image: url(../images/flag-usa.jpeg)
+}
+
+
+
+/*--------------------------------------------------------------------*/
+/* FOOTER */
+/*--------------------------------------------------------------------*/
+footer {
+    color: #fff;
+    margin-top: 60px;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+}
+
+#footer-hp {
+    margin-top: 93px;
+}
+
+footer h2 {
+    font-size: 20pt;
+    color: #C0D7E7;
+}
+
+.footer-countries {
+    display: inline-block;
+    width: 260px;
+    text-align: right;
+    padding: 30px;
+    vertical-align: top;
+}
+
+footer a {
+    font-size: 14pt;
+    color: #fff;
+    text-decoration: none;
+}
+
+    footer a:hover {
+        color: #C0D7E7;
+    }
+
+li.site-links ul li {
+    display: inline-block;
+    height: 35px;
+    border-left: 2px solid #fff;
+    margin-top: 60px;
+}
+
+    li.site-links ul li a {
+        position: relative;
+        top: 3px;
+        padding: 0 30px;
+    }
+
+footer ul li:last-child {
+    border-left: none;
+}
+
+footer p {
+    color: #C0D7E7;
+    margin-top: 20px;
+    font-size: 12pt;
+}
+
+/*--------------------------------------------------------------------*/
+/* EXTRA PAGES GLOBAL */
+/*--------------------------------------------------------------------*/
+
+.contact-us-article h1, .about-us-article h1, .site-map-article h1 {
+    font-size: 55pt;
+    color: #fff;
+    margin: 45px auto 70px auto;
+    text-align: center;
+}
+
+/*------------------------------*/
+/* ABOUT US */
+/*------------------------------*/
+.about-bg {
+    height: 1093px;
+    z-index: -1;
+    background-color: #fff;
+}
+
+.about-us-article {
+    position: relative;
+    width: 1366px;
+    height: 1225px;
+    margin: 0 auto;
+    font-size: 14pt;
+}
+
+article header {
+    padding: 0;
+    height: 390px;
+}
+
+.inline {
+    display: inline;
+}
+
+.banner-photo.about-us {
+    background-image: url(../images/about-us.jpeg);
+    height: 280px;
+    background-position: center;
+}
+
+.about-us-article h2 {
+    font-size: 26pt;
+    margin: 150px 0 30px 0;
+}
+
+.about-us-article p {
+    margin: 10px 0;
+    width: 680px;
+}
+
+.about-us-article h3 {
+    font-size: 14pt;
+    display: inline;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #237da0;
+}
+
+.hit-link-wrap {
+    width: 300px;
+    margin-top: 80px;
+}
+
+.developed-pages-section {
+    margin-top: 40px;
+}
+
+.about-us-article a {
+    color: #20252b;
+    text-decoration: underline;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+    .about-us-article a:hover {
+        color: #237da0;
+        text-decoration: none;
+    }
+
+.developers {
+    height: 250px;
+    width: 250px;
+}
+
+.our-photos {
+    width: 250px;
+    position: relative;
+    bottom: 935px;
+    right: 920px;
+}
+
+.our-photo-wrap {
+    padding: 10px 0;
+}
+
+.our-photos p {
+    width: 250px;
+    text-align: center;
+}
+
+.hit-logo {
+    width: 200px;
+    display: block;
+}
+
+/*------------------------------*/
+/* SITE MAP */
+/*------------------------------*/
+
+.banner-photo.site-map {
+    background-image: url(../images/site-map-bg.jpeg);
+    height: 280px;
+    background-position: center;
+}
+
+.site-map-bg {
+    height: 884px;
+    z-index: -1;
+    background-color: #fff;
+}
+
+.site-map-article {
+    position: relative;
+    width: 1366px;
+    margin: 0 auto;
+}
+
+    .site-map-article h2 {
+        margin: 110px 0 10px 0;
+    }
+
+        .site-map-article h2.h-underline:after {
+            width: 80px;
+        }
+
+.site-map-countries {
+    width: 450px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+    .site-map-countries ul {
+        width: 200px;
+    }
+
+    .site-map-countries.oceania ul {
+        width: 250px;
+    }
+
+    .site-map-countries ul li {
+        font-size: 14pt;
+        margin: 10px 0;
+    }
+
+    .site-map-countries a {
+        color: #20252b;
+        text-decoration: underline;
+    }
+
+        .site-map-countries a:hover {
+            color: #237da0;
+            text-decoration: underline;
+        }
+
+    .site-map-countries ul li .notActive {
+        color: gray;
+        text-decoration: none;
+    }
+
+    .site-map-countries .ico {
+        width: 23px;
+        height: 23px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 10px;
+        background-size: 100%;
+    }
+
+
+/*------------------------------*/
+/* CONTACT US */
+/*------------------------------*/
+.banner-photo.contact-us {
+    background-image: url(../images/contact-us.png);
+    height: 280px;
+    background-position: center;
+}
+
+.contact-us-bg {
+    height: 688px;
+    z-index: -1;
+    background-color: #fff;
+}
+
+.contact-us-article {
+    position: relative;
+    width: 1366px;
+    height: 820px;
+    margin: 0 auto;
+    font-size: 14pt;
+    padding: 0 50px;
+}
+
+form {
+    width: 600px;
+    height: 510px;
+    display: inline-block;
+    -webkit-box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+    margin: 0 600px 0 0;
+    padding: 30px 40px;
+    position: relative;
+    bottom: 425px;
+}
+
+input, textarea {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid #e1e2eb;
+    -webkit-box-shadow: inset 0 2px 4px 0 rgba(206, 209, 224, 0.20);
+    box-shadow: inset 0 2px 4px 0 rgba(206, 209, 224, 0.20);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+textarea {
+    height: 65px;
+}
+
+input, textarea, label {
+    display: block;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+.contact-us-article p {
+    width: 470px;
+    display: inline-block;
+    font-size: 18pt;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.site-logo {
+    background-image: url(../images/logo.png);
+    width: 170px;
+    height: 170px;
+    background-size: cover;
+    margin: 20px 145px 0 0;
+}
+
+form .btns {
+    width: 120px;
+    padding: 5px 20px;
+    margin: 40px auto 0 auto;
+    cursor: pointer;
+}
+
+label span {
+    color: red;
+}
+
+
+/*------------------------------*/
+/* INTERACTIVE */
+/*------------------------------*/
+.interactive-bg {
+    height: 913px;
+    z-index: -1;
+    background-color: #fff;
+}
+
+iframe {
+    position: relative;
+    display: block;
+    width: 1200px;
+    height: 768px;
+    margin: 0 auto;
+    padding: 0px;
+    border: none;
+    overflow: hidden;
+}
+
+
+/*------------------------------*/
+/* Color Contrast */
+/*------------------------------*/
+a.clickable {
+    cursor: pointer;
+}
+
+body.contrast {
+    background-color: black;
+    color: yellow;
+}
+
+    body.contrast ul.sub-menu li a.clickable.colors {
+        border: 0.5px solid yellow;
+    }
+
+    body.contrast.underline ul.sub-menu li a.clickable.links {
+        background-color: black;
+        border: 0.5px solid yellow;
+    }
+
+    /* ----- nav ----- */
+    body.contrast .nav-bg,
+    body.contrast ul.sub-menu li a {
+        background-color: black;
+    }
+
+    body.contrast .nav-bg,
+    body.contrast .countries-bg {
+        border-bottom: 1px solid yellow;
+    }
+
+    body.contrast header,
+    body.contrast header p,
+    body.contrast header a,
+    body.contrast header a:hover,
+    body.contrast header h1 {
+        color: yellow;
+    }
+
+    /* ----- footer ----- */
+    body.contrast .footer-bg {
+        border-top: 1px solid yellow;
+    }
+
+    body.contrast .footer-line {
+        background-color: yellow;
+    }
+
+    body.contrast footer a,
+    body.contrast footer h2,
+    body.contrast footer p {
+        color: yellow;
+    }
+
+    body.contrast footer a {
+        border-bottom: 0.5px solid yellow;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        transition: 0.3s ease;
+    }
+
+        body.contrast footer a:hover {
+            text-decoration: none;
+            border-bottom: 0.5px solid transparent;
+        }
+
+    /* ----- bottuns ----- */
+    body.contrast .btns {
+        background-color: black;
+        color: yellow;
+        outline: 3px solid yellow;
+    }
+
+        body.contrast .btns:hover {
+            text-decoration: underline;
+        }
+
+    body.contrast .carousel-indicators {
+        background-color: black;
+    }
+
+    body.contrast .carousel.quick-facts .carousel-indicators {
+        background-color: transparent;
+    }
+
+    /* ----- homepage ----- */
+    body.contrast .countries a,
+    body.contrast .introduction {
+        color: yellow;
+    }
+
+    body.contrast .countries-bg,
+    body.contrast .introduction,
+    body.contrast .quickfacts-bg,
+    body.contrast footer,
+    body.contrast .footer-bg {
+        background-color: black;
+    }
+
+    body.contrast .countries a {
+        border-bottom: 0.5px solid yellow;
+        -webkit-transition: 0.2s ease;
+        -moz-transition: 0.2s ease;
+        -ms-transition: 0.2s ease;
+        -o-transition: 0.2s ease;
+        transition: 0.2s ease;
+    }
+
+        body.contrast .countries a:hover {
+            border-bottom: 0.5px solid transparent;
+        }
+
+    body.contrast .countries .flag {
+        outline: 3px solid transparent;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        transition: 0.3s ease;
+    }
+
+        body.contrast .countries .flag:hover {
+            outline: 3px solid yellow;
+        }
+
+    body.contrast .quick-facts .slide-skew::after {
+        background-color: black;
+    }
+
+    body.contrast .quick-facts-arrow {
+        color: yellow;
+        background-color: black;
+    }
+
+
+    /* ----- usa ----- */
+    body.contrast .banner-photo {
+        background-color: black;
+        background-image: none;
+        border-bottom: 1px solid yellow;
+    }
+
+    body.contrast .bread-crumbs-nav i,
+    body.contrast .bread-crumbs-nav a,
+    body.contrast .bread-crumbs-nav li,
+    body.contrast .countryBanner h1,
+    body.contrast .countryBanner p,
+    body.contrast .countryBanner ul li a,
+    body.contrast .dresscode-section .dresscode-decri,
+    body.contrast .besiness-meeting-section .rule-num,
+    body.contrast .read-more a {
+        color: yellow;
+    }
+
+
+
+body.contrast .country-bio,
+body.contrast .next-to-carousel.greetings,
+body.contrast .next-to-carousel.communication,
+body.contrast .next-to-carousel.negotiation,
+body.contrast .next-to-carousel.business-cards,
+body.contrast .besiness-meeting-section .rule,
+body.contrast .dresscode-section .dresscode-decri {
+    background-color: black;
+    border: 1px solid yellow;
+}
+
+
+    body.contrast .greetings-bg,
+    body.contrast .communication-bg,
+    body.contrast .dresscode-meetings-bg,
+    body.contrast .negotiation-bg,
+    body.contrast .gifts-cards-more-bg,
+    body.contrast .dresscode-section,
+    body.contrast .gifts-section,
+    body.contrast .business-cards-section {
+        background-color: black;
+        border-bottom: 1px solid yellow;
+    }
+
+
+    body.contrast .read-more a {
+        border-bottom: 0.5px solid yellow;
+        -webkit-transition: 0.2s ease;
+        -moz-transition: 0.2s ease;
+        -ms-transition: 0.2s ease;
+        -o-transition: 0.2s ease;
+        transition: 0.2s ease;
+    }
+
+        body.contrast .read-more a:hover {
+            border-bottom: 0.5px solid transparent;
+        }
+
+    /* site map */
+    body.contrast .site-map-bg {
+        background-color: black;
+    }
+
+    body.contrast .site-map-countries ul li a {
+        color: yellow;
+        text-decoration: none;
+        -webkit-transition: 0.2s ease;
+        -moz-transition: 0.2s ease;
+        -ms-transition: 0.2s ease;
+        -o-transition: 0.2s ease;
+        transition: 0.2s ease;
+    }
+
+        body.contrast .site-map-countries ul li a:hover {
+            text-decoration: underline;
+        }
+
+        body.contrast .site-map-countries ul li a.notActive {
+            text-decoration: line-through;
+        }
+
+
+    /* contact us, about us */
+    body.contrast .about-bg,
+    body.contrast .contact-us-bg,
+    body.contrast form {
+        background-color: black;
+    }
+
+    body.contrast .about-us-article h3,
+    body.contrast .about-us-article a {
+        color: yellow;
+    }
+
+/*------------------------------*/
+/* Links Underline */
+/*------------------------------*/
+body.underline a {
+    text-decoration: underline;
+}
+
+body.underline ul.sub-menu li a.clickable.links {
+    background-color: #f2f8fc;
+}
