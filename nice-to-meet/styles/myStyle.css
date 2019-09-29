@@ -579,7 +579,7 @@ header div.clickable {
 }
 
 .introduction {
-    position: absolute;
+    position: relative;
     width: 960px;
     left: 0;
     right: 0;
@@ -645,7 +645,7 @@ header div.clickable {
 /*---------------------------------------------*/
 
 .countries {
-    margin-top: 700px;
+    margin-top: 310px;
     display: inline-block;
     text-align: center;
     position: relative;
